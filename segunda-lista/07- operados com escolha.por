@@ -9,13 +9,22 @@ programa {
     escreva("escolha um operador!\n1- Soma\n2- Subtração\n3- Multiplicação\n4- Divisão\n")
     leia(operador)
 
-    se(operador == 1)
-      escreva("O resultado é: ", num1 + num2)
-    senao se(operador == 2)
-      escreva("O resultado é: ", num1 - num2)
-    senao se(operador == 3)
-      escreva("O resultado é: ", num1 * num2)
-    senao
-      escreva("O resultado é: ", num1 / num2)
+    escolha(operador)
+    {
+      caso 1:
+        escreva("O resultado é: ", num1 + num2)
+      pare
+      caso 2:
+        escreva("O resultado é: ", num1 - num2)
+      pare
+      caso 3:
+        escreva("O resultado é: ", num1 * num2)
+      pare
+      caso 4:
+        escreva("O resultado é: ", num1 / num2)
+      pare
+      caso contrario:
+        escreva("Escolha uma opção valida!")
+    }
   } 
 }
