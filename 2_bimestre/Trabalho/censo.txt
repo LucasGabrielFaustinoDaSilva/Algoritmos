@@ -1,0 +1,63 @@
+dados que preciso:
+- Quantidade de pessoas que moram numa casa
+- idade de cada pessoa
+-sexo de cada pessoa sendo ele homem mulher e nao informado
+-salario de cada pessoa
+
+O que eu preciso fazer com os dados (processamento):
+
+O que eu preciso exibir para o usuario:
+- apos coletar os dados de cada residencia:
+  - total de pessoas na casa
+  - media de idades da residencia
+  - media salarial dos homens
+  - media salarial das mulheres
+
+- apos o usuario digitar que a proxima é igual a zero:
+  - total de residencias pesquisadas
+  - total de pessoas analisadas
+  - media geral de idades de todas as pessoas
+  - quantidade total de homens, mulheres e nao informados
+  - media salarial geral
+
+dicas:
+- Usar variaveis para armazenar totais
+- Estrutura de repetição para percorrer as pessoas e residencia
+- Condicionais para calcular as medias separadamente por sexo
+
+
+Exemplo de fluxo:
+ CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO
+Quantas pessoas moram na residência? 3
+Pessoa 1:
+Idade: 25
+Sexo (homem/mulher/não informado): homem
+Salário: 2500.00
+Pessoa 2:
+Idade: 22
+Sexo (homem/mulher/não informado): mulher
+Salário: 0
+Pessoa 3:
+Idade: 45
+Sexo (homem/mulher/não informado): homem
+Salário: 3500.00
+--- RESIDÊNCIA 1 ---
+Total de pessoas: 3
+Média de idades: 30.7
+Média salarial dos homens: R$ 3000.00
+Média salarial das mulheres: R$ 0.00
+Quantas pessoas moram na próxima residência? 0
+ RELATÓRIO FINAL DO CENSO 2025
+Total de residências: 1
+Total de pessoas: 3
+Média geral de idades: 30.7
+Homens: 2 | Mulheres: 1 | Não informado: 0
+Média salarial geral: R$ 3000.00
+
+
+
+
+  
+
+
+
