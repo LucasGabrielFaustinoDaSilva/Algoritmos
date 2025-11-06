@@ -2,12 +2,19 @@ print("CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO")
 # Dados
 qtd_pessoas = int(input("Quantas pessoas moram na residencia: "))
 
-residencia = 1
+residencia = 0
 salario_homem = 0
 salario_mulher = 0
+salario_outro = 0
 idade_soma = 0
 contador_homem = 0
 contador_mulher = 0
+qtd_pessoas_total = 0
+media_total = 0
+total_homens = 0
+total_mulheres = 0
+media_salario_total = 0
+nao_informado = 0
 
 while qtd_pessoas != 0:
     for i in range(qtd_pessoas):
@@ -20,7 +27,10 @@ while qtd_pessoas != 0:
         elif sexo == "mulher":
             salario_mulher = salario_mulher + salario
             contador_mulher += 1
-        residencia += 1
+        else:
+            salario_outro = salario_outro + salario
+            nao_informado = nao_informado + 1
+        
 
         idade_soma = idade_soma + idade
 
@@ -41,9 +51,29 @@ while qtd_pessoas != 0:
         
     else:
         print("Nenhuma mulher informada!")
-    
-    qtd_pessoas = int(input(f"Quantas pessoas moram na {residencia}ª residencia: "))
+    residencia += 1
+    qtd_pessoas_total = qtd_pessoas_total + qtd_pessoas
+    media_total = media_total + media_idade 
+    total_homens = total_homens + contador_homem
+    total_mulheres = total_mulheres + contador_mulher
+    media_salario_total = media_salario_total + salario_homem + salario_mulher
 
+
+  
+    qtd_pessoas = int(input(f"Quantas pessoas moram na {residencia + 1}ª residencia: "))
+
+media_salario_total_final = media_salario_total / qtd_pessoas_total
+
+media_total = media_total / qtd_pessoas_total
+print(f"Total de residencias pesquisadas:  {residencia}")
+
+print(f"Total de pessoas analizadas {qtd_pessoas_total}")
+
+print(f"Media geral de idades de todas as pessoas: {media_total}")
+
+print(f"Quantidade total de seres humanos: {qtd_pessoas_total}")
+
+print(f"Media salarial geral: {media_salario_total_final} ")
 
 
 # # cada resisdencia 
