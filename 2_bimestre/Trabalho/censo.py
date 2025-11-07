@@ -2,25 +2,33 @@ print("CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO")
 # Dados
 qtd_pessoas = int(input("Quantas pessoas moram na residencia: "))
 
+
 residencia = 0
-salario_homem = 0
-salario_mulher = 0
-salario_outro = 0
-idade_soma = 0
-contador_homem = 0
-contador_mulher = 0
 qtd_pessoas_total = 0
 media_total = 0
 total_homens = 0
 total_mulheres = 0
 media_salario_total = 0
-nao_informado = 0
+total_pessoas_salario = 0
+total_nao_informado = 0
+idade_total_geral = 0
+
 
 while qtd_pessoas != 0:
+    
+    salario_homem = 0
+    salario_mulher = 0
+    salario_outro = 0
+    idade_soma = 0
+    contador_homem = 0
+    contador_mulher = 0
+    contador_nao_informado = 0
     for i in range(qtd_pessoas):
         idade = int(input(f"Qual a idade da {i + 1}ª pessoa: "))
-        sexo = input("Qual o sexo da primeira pessoa: 'homem' 'mulher' 'não informado': ")
+        sexo = input(f"Qual o sexo da {i + 1}ª pessoa: 'homem' 'mulher' 'não informado': ")
         salario = float(input(f"Digite o salario da {i + 1}ª pessoa: "))
+        if salario > 0:
+            total_pessoas_salario = total_pessoas_salario + 1
         if sexo == "homem":
             salario_homem = salario_homem + salario
             contador_homem += 1
@@ -29,7 +37,7 @@ while qtd_pessoas != 0:
             contador_mulher += 1
         else:
             salario_outro = salario_outro + salario
-            nao_informado = nao_informado + 1
+            contador_nao_informado = contador_nao_informado + 1
         
 
         idade_soma = idade_soma + idade
@@ -52,19 +60,29 @@ while qtd_pessoas != 0:
     else:
         print("Nenhuma mulher informada!")
     residencia += 1
+
     qtd_pessoas_total = qtd_pessoas_total + qtd_pessoas
-    media_total = media_total + media_idade 
+
     total_homens = total_homens + contador_homem
     total_mulheres = total_mulheres + contador_mulher
-    media_salario_total = media_salario_total + salario_homem + salario_mulher
+
+    media_salario_total = media_salario_total + salario_homem + salario_mulher + salario_outro
+
+    idade_total_geral = idade_total_geral + idade_soma
+
+    total_nao_informado = total_nao_informado + contador_nao_informado
 
 
   
     qtd_pessoas = int(input(f"Quantas pessoas moram na {residencia + 1}ª residencia: "))
 
-media_salario_total_final = media_salario_total / qtd_pessoas_total
 
-media_total = media_total / qtd_pessoas_total
+media_total = idade_total_geral / qtd_pessoas_total
+
+if total_pessoas_salario > 0:
+    media_salario_total_final = media_salario_total / total_pessoas_salario
+else: 
+    media_salario_total = 0
 print(f"Total de residencias pesquisadas:  {residencia}")
 
 print(f"Total de pessoas analizadas {qtd_pessoas_total}")
@@ -74,23 +92,10 @@ print(f"Media geral de idades de todas as pessoas: {media_total}")
 print(f"Quantidade total de seres humanos: {qtd_pessoas_total}")
 
 print(f"Media salarial geral: {media_salario_total_final} ")
+print(f"Homens: {total_homens}\nMulheres: {total_mulheres}\nNão informados: {total_nao_informado}")
 
 
-# # cada resisdencia 
-# pessoas = None
 
-# media_salarial_homens = None
-# media_salarial_mulher = None
-
-
-# #apos o usuario digitar zero na proxima residencia
-# total_residencia = None
-# total_pessoas = None
-# media_idade = None
-# quantidade_homens = None
-# quantidade_mulheres = None
-# quantidade_ninformados = None
-# media_geral_salario = None
 
 
 
